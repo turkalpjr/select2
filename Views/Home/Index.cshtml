@@ -1,0 +1,60 @@
+﻿
+
+ 
+<div class="form-group">
+    <label>Example of a Simple Static Select</label>
+    <select name="simpleSelect2" class="form-control" id="simpleSelect2">
+        <option data-select2-id="27">1</option>
+        <option data-select2-id="28">2</option>
+        <option data-select2-id="29">3</option>
+        <option data-select2-id="30">4</option>
+        <option data-select2-id="31">5</option>
+    </select>
+</div>
+
+@*<select2   id="select2id"></select2>*@
+ 
+
+
+
+@*<script>
+    $(function () {
+       
+        Init();
+    });
+
+    function Init(){
+
+      
+
+        $.get(" /home/ReturnSelect2", function (data) {
+            var Result = [];
+            for (var i = 0; i < data.length; i++) {
+                Result.push("<option value='" + data[i].id + "'>" + data[i].text + "</option>");
+            }
+
+            $('#select2id').html(Result);
+
+        });
+         
+        }
+ 
+
+
+</script>*@
+
+<script>
+    $("#simpleSelect2").select2({
+        placeholder: "Select a Static Value",
+        theme: "bootstrap4",
+        allowClear: true
+    });
+</script>
+
+
+@section Scripts
+    {
+    <script src="~/lib/select2/js/select2.full.min.js"></script>
+    <script src="~/js/select2.js"></script>
+}
+
